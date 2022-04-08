@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" method="post" th:action="@{/panel}" th:object="${bar}">
+    <div class="form-group">
+        <label for="formGroupExampleInput"> Bar İd </label>
+        <input type="text" th:field="*{barId}" class="form-control" id="formGroupExampleInput"
+               placeholder="Example input" th:name="barId">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Bar İsim</label>
+        <input type="text" th:field="*{barName}" class="form-control" id="formGroupExampleInput2"
+               placeholder="Example input" th:name="barName">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Bar bulunduğu adres </label>
+        <input type="text" th:field="*{barLocation}" class="form-control" id="formGroupExampleInput3"
+               placeholder="Example input" th:name="barLocation">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Bar Fotoğrafları</label>
+        <input type="text" th:field="*{barImg}" class="form-control" id="formGroupExampleInput4"
+               placeholder="Example input" th:name="barImg">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Bar açıklama </label>
+        <input type="text" th:field="*{barDescription}" class="form-control" id="formGroupExampleInput5"
+               placeholder="Example input" th:name="barDescription">
+    </div>
+    <br><br>
+
+    <button type="submit" th:name="action">Gönder</button>
+</form>
+</body>
+</html>

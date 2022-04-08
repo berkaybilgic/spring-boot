@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/}">
+    <input type="text" th:name="participant"/>
+    <select th:name="country">
+        <option value="de">Germany</option>
+        <option value="nl">Netherlands</option>
+        <option value="pl">Poland</option>
+        <option value="lv">Latvia</option>
+    </select>
+</form>
+
+<div th:each="bar : ${barlar.content}" >
+
+</div>
+
+</body>
+</html>
