@@ -1,25 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<div  id="kaybolanMesaj"    th:if="${message}" th:text="${message}" th:class="${alertClass}" style="text-align: center;"/>
+<head th:replace="Navbar :: library1">
+
+
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Panel Ekranı</title>
+
 </head>
 <body>
+<div th:replace="Navbar :: navbar"></div>
+<div class="container">
+    <form action="#" method="post" th:action="@{/panel}" th:object="${bar}">
+        <div class="form-group">
+            <label for="formGroupExampleInput"> Bar İd </label>
+            <input type="text" th:field="*{barId}" class="form-control" id="formGroupExampleInput"
+                   placeholder="Example input" th:name="barId">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Bar İsim</label>
+            <input type="text" th:field="*{barName}" class="form-control" id="formGroupExampleInput2"
+                   placeholder="Example input" th:name="barName">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Bar bulunduğu adres </label>
+            <input type="text" th:field="*{barLocation}" class="form-control" id="formGroupExampleInput3"
+                   placeholder="Example input" th:name="barLocation">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Bar Fotoğrafları</label>
+            <input type="text" th:field="*{barImg}" class="form-control" id="formGroupExampleInput4"
+                   placeholder="Example input" th:name="barImg">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Bar açıklama </label>
+            <input type="text" th:field="*{barDescription}" class="form-control" id="formGroupExampleInput5"
+                   placeholder="Example input" th:name="barDescription">
+        </div>
+        <br><br>
 
-<form action="/action_page.php">
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname" value="John"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" value="Doe"><br><br>
-    <input type="submit" value="Submit">
-    <br><br>
-
-    <ol>
-        <li th:each="bar : ${barlar}" th:text="${bar.getBarName()}"></li>
-    </ol>
+        <button class="btn btn-success" type="submit" th:name="action">Gönder</button>
+    </form>
+</div>
 
 
-</form>
+
+
+
+<script>
+
+    $(document).ready(function(){
+
+        setTimeout(function(){
+
+            $("#kaybolanMesaj").fadeOut("slow", function () {
+
+                $("#kaybolanMesaj").remove();
+
+            });
+
+        }, 1500);
+
+    });
+
+
+</script>
 
 </body>
 </html>
