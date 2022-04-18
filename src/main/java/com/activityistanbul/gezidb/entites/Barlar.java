@@ -24,16 +24,14 @@ public class Barlar {
     private String barDescription;
 
 
-
-
-    public Barlar(){
+    public Barlar() {
     }
 
-    public Barlar(int barId, String barName, String barLocation, String barImg, String barDescription ) {
+    public Barlar(int barId, String barName, String barLocation, String barImg, String barDescription) {
         this.barId = barId;
         this.barName = barName;
         this.barLocation = barLocation;
-        this.barImg = barImg ;
+        this.barImg = barImg;
         this.barDescription = barDescription;
     }
 

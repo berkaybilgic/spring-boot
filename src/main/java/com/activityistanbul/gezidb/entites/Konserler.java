@@ -11,9 +11,9 @@ public class Konserler {
     private int konserId;
 
     @Column(name = "konser_name")
-    private  String konserName;
+    private String konserName;
 
-    public Konserler(){
+    public Konserler() {
     }
 
     public Konserler(int konserId, String konserName) {

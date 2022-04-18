@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="Navbar2 :: library2" >
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="Navbar2 :: navbar2"></div>
+<br>
+
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">Mekan Id</th>
+    <th scope="col">Mekan ismi</th>
+    <th scope="col">Mekan Adresi</th>
+    <th scope="col">Mekan Fotoğrafı</th>
+    <th scope="col">Mekan Açıklaması</th>
+    <th scope="col">Mekan Kategorisi</th>
+    <th scope="col">Mekanı Güncelle</th>
+    <th scope="col">Mekanı Sil </th>
+
+
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="mekan : ${mekanlar.content}" >
+    <th scope="row" th:text ="${mekan.getMekanId}" > </th>
+    <td  th:text ="${mekan.getMekanName}" >  </td>
+    <td  th:text ="${mekan.getMekanLocation}" >  </td>
+    <td  th:text ="${mekan.getMekanImg}" >  </td>
+    <td  th:text ="${mekan.getMekanDescription}" >  </td>
+    <td  th:text ="${mekan.getMekanKategori}" >  </td>
+   <td> <a th:href="@{'/update/' + ${mekan.getMekanId}}" > <button type="button" class="btn btn-primary">Mekanı Güncelle</button> </a> </td>
+    <td> <a  th:href="@{'/delete/' + ${mekan.getMekanId}}" >  <button type="button" class="btn btn-danger">Mekanı Sil </button>  </a> </td>
+
+
+
+  </tr>
+  </tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <div th:each="i : ${#numbers.sequence( 1, pago , 1)}">
+      <li class="page-item"><a class="page-link" th:href="@{'/admintablo'(page=${i})}" th:text="${ i }"> </a></li>
+    </div>
+    <a class="page-link" href="#" aria-label="Next">
+      <span aria-hidden="true">&raquo;</span>
+      <span class="sr-only">Next</span>
+    </a>
+    </li>
+
+
+
+
+</body>
+</html>

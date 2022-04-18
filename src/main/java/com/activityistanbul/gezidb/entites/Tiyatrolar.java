@@ -3,7 +3,7 @@ package com.activityistanbul.gezidb.entites;
 import javax.persistence.*;
 
 @Entity
-@Table(name="tiyatrolar")
+@Table(name = "tiyatrolar")
 public class Tiyatrolar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +13,7 @@ public class Tiyatrolar {
     @Column(name = "tiyatro_name")
     private String tiyatroName;
 
-    public Tiyatrolar(){
+    public Tiyatrolar() {
     }
 
     public Tiyatrolar(int tiyatroId, String tiyatroName) {

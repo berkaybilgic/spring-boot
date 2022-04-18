@@ -13,10 +13,10 @@
 <div th:replace="Navbar :: navbar"></div>
 <br><br>
 
-<div class="card" style="width: 18rem;" th:each="bar : ${barlar.content}">
+<div class="card" style="width: 18rem;" th:each="mekan : ${mekanlar.content}">
     <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
-        <h5 class="card-title" th:text="${bar.getBarName} + '---' + ${bar.getBarId}"></h5>
+        <h5 class="card-title" th:text="${mekan.getMekanName} + '---' + ${mekan.getMekanId}"></h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
     </div>
@@ -26,7 +26,7 @@
         <li class="list-group-item">Vestibulum at eros</li>
     </ul>
     <div class="card-body">
-        <a th:href="@{'/detay/' + ${bar.getBarId}}" class="card-link">Card link</a>
+        <a class="card-link">Card link</a>
         <a href="#" class="card-link">Another link</a>
     </div>
 </div>
@@ -42,7 +42,7 @@
             </a>
         </li>
         <div th:each="i : ${#numbers.sequence( 1, pago , 1)}">
-            <li class="page-item"><a class="page-link" th:href="@{'/ekle'(page=${i})}" th:text="${ i }"> </a></li>
+            <li class="page-item"><a class="page-link" th:href="@{'/listele'(page=${i})}" th:text="${ i }"> </a></li>
         </div>
         <a class="page-link" href="#" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>

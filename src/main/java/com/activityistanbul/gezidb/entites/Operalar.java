@@ -13,7 +13,7 @@ public class Operalar {
     @Column(name = "opera_name")
     private String operaName;
 
-    public Operalar(){
+    public Operalar() {
     }
 
     public Operalar(int operaID, String operaName) {

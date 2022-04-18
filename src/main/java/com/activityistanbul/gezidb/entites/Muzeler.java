@@ -13,7 +13,7 @@ public class Muzeler {
     @Column(name = "muze_name")
     private String muzeName;
 
-    public Muzeler(){
+    public Muzeler() {
     }
 
     public Muzeler(int muzeId, String muzeName) {

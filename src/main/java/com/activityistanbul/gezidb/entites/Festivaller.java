@@ -13,7 +13,7 @@ public class Festivaller {
     @Column(name = "festival_name")
     private String festivalName;
 
-    public Festivaller(){
+    public Festivaller() {
     }
 
     public Festivaller(int festivalId, String festivalName) {
